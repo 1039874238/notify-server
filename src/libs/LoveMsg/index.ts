@@ -11,7 +11,7 @@ import { joke } from './joke'
 dotenv.config()
 
 export default function main() {
-  const nowTime = dayjs().hour()
+  const nowTime = dayjs().hour() - 8
   if (nowTime >= 7 && nowTime < 9)
     goodMorning()
 

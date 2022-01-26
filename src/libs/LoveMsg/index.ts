@@ -13,13 +13,13 @@ dotenv.config()
 export default function main() {
   const nowTime = dayjs().subtract(16, 'hour').hour()
   console.log(nowTime)
-  if (nowTime >= 23 && nowTime < 9)
+ if (nowTime > 7 && nowTime < 9)
     goodMorning()
 
-  else if (nowTime >= 11 && nowTime < 13)
+  else if (nowTime > 11 && nowTime < 13)
     goodAfternoon()
 
-  else if (nowTime >= 22 && nowTime < 23)
+  else if (nowTime > 21 && nowTime < 23)
     goodEvening()
 
   else

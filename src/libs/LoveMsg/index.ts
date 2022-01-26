@@ -25,7 +25,7 @@ export default function main() {
   else
     
   if (nowTime >= 9 && nowTime <= 18)
-    joke()
+    console.log('当前时间不发消息')
   else
     console.log('当前时间不发消息')
 }

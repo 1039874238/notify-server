@@ -22,6 +22,7 @@ export default function main() {
     goodEvening()
 
   else
+    console.log(nowTime)
   if (nowTime >= 9 && nowTime <= 18)
     joke()
   else

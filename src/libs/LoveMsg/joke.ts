@@ -14,7 +14,7 @@ export const joke = async() => {
  给你说两个雷人的笑话吧😝\n`
 
   text += `
- ${[res[0]].map(n => `『${n.title}』${n.content}`).join('\n\n')}`
+ ${[res[0],res[1]].map(n => `『${n.title}』${n.content}`).join('\n\n')}`
 
   const template = {
     msgtype: 'text',

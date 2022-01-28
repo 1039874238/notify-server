@@ -23,9 +23,5 @@ export default function main() {
     goodEvening()
 
   else
-    
-  if (nowTime >= 9 && nowTime <= 18)
-    console.log('当前时间不发消息')
-  else
     console.log('当前时间不发消息')
 }

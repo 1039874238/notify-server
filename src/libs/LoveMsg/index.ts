@@ -13,7 +13,7 @@ dotenv.config()
 export default function main() {
   const nowTime = dayjs().subtract(16, 'hour').hour()
   console.log(nowTime)
- if (nowTime > 7 && nowTime < 9)
+ if (nowTime > 6 && nowTime < 8)
     goodMorning()
 
   else if (nowTime > 11 && nowTime < 13)

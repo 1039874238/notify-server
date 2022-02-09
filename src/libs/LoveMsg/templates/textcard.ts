@@ -13,23 +13,44 @@ import dayjs from '../../../utils/dayjs'
 
 // 结婚的日子
 const start_stamp = '2020-09-15'
+const weekIndex = dayjs().subtract(16, 'hour').day()
+
+let weekDay = ''
+switch (weekIndex) {
+  case 0:
+    weekDay = '星期天'
+    break
+  case 1:
+    weekDay = '星期一'
+
+    break
+  case 2:
+    weekDay = '星期二'
+
+    break
+  case 3:
+    weekDay = '星期三'
+
+    break
+  case 4:
+    weekDay = '星期四'
+
+    break
+  case 5:
+    weekDay = '星期五'
+
+    break
+
+  default:
+    weekDay = '星期六'
+
+    break
+}
 
 export const textCardTemplate = (data: TextCardTemplateProps) => {
   const {
-    city,
     date,
-    wea,
-    tem1,
-    tem2,
-    win,
-    win_speed_day,
-    air,
-    air_level,
-    // air_tips,
-    humidity,
-    alarm,
     lunarInfo,
-    week,
     oneWord,
   } = data
 
@@ -38,34 +59,33 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
   const dateLength = dayjs(date).diff(start_stamp, 'day')
 
   // 公历节日、农历节日和二十四节气
-  const { festival, lunar_festival, jieqi, lubarmonth, lunarday } = lunarInfo
-  const festival_info = festival ? `| ${festival}` : ''
+  const { lunar_festival, jieqi, lubarmonth, lunarday } = lunarInfo
   const lunar_festival_info = lunar_festival ? `| ${lunar_festival}` : ''
   const jieqi_info = jieqi ? `| ${jieqi}` : ''
 
   // 拼接内容
-  let description = `${city} | ${today} | ${week} ${festival_info}
-农历 | ${lubarmonth}${lunarday} ${lunar_festival_info} ${jieqi_info}\n
-今日天气状况：
-天气：${wea}
-${win}：${win_speed_day}
-温度：${tem2}℃ ~ ${tem1}℃
-湿度：${humidity}
-空气：${air_level} | ${air}\n`
+  let description = ` ${today} | ${weekDay}
+农历 | ${lubarmonth}${lunarday} ${lunar_festival_info} ${jieqi_info}\n`
+// 今日天气状况：
+// 天气：${wea}
+// ${win}：${win_speed_day}
+// 温度：${tem2}℃ ~ ${tem1}℃
+// 湿度：${humidity}
+// 空气：${air_level} | ${air}\n`
 
   // 添加预警天气
-  if (alarm) {
-    description += `
-有预警信息哦：${alarm.alarm_type} | ${alarm.alarm_level}预警\n`
-  }
+  //   if (alarm) {
+  //     description += `
+  // 有预警信息哦：${alarm.alarm_type} | ${alarm.alarm_level}预警\n`
+  //   }
 
   // 最高温度
-  if (+tem1 <= 3) {
-    description += `
-哈喽哈喽~这里是来自小僵尸的爱心提醒哦：
-今日最高温度仅为🥶 ${tem1}℃，可冷可冷了~
-小宝贝可要注意保暖哦~\n`
-  }
+  //   if (+tem1 <= 3) {
+  //     description += `
+  // 哈喽哈喽~这里是来自小僵尸的爱心提醒哦：
+  // 今日最高温度仅为🥶 ${tem1}℃，可冷可冷了~
+  // 小宝贝可要注意保暖哦~\n`
+  //   }
 
   //   if (air_tips) {
   //     description += `

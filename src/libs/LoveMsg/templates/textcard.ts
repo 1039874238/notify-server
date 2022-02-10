@@ -13,7 +13,7 @@ import dayjs from '../../../utils/dayjs'
 
 // 结婚的日子
 const start_stamp = '2020-09-15'
-const weekIndex = dayjs().subtract(16, 'hour').day()
+const weekIndex = dayjs().add(7, 'hour').day()
 
 let weekDay = ''
 switch (weekIndex) {

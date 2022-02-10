@@ -14,7 +14,7 @@ export const textTemplate = (data: TextTemplateProps) => {
   const week = weekToday()
   text += `
 如果我小宝贝已经起床啦！小僵尸向你说早安呦~，记得吃早饭呀😆\n
-今天是${week}哦。~`
+今天是${week}哦。~\n`
 
   // 添加笑话
   if (caiHongpi) {
@@ -35,10 +35,10 @@ ${sayLove.content}\n`
 『${songLyrics.source}』${songLyrics.content}\n`
   }
 
-  if (oneMagazines) {
-    text += `
-『ONE杂志』${oneMagazines.word}\n`
-  }
+//   if (oneMagazines) {
+//     text += `
+// 『ONE杂志』${oneMagazines.word}\n`
+//   }
 
   if (netEaseCloud) {
     text += `
@@ -46,16 +46,16 @@ ${sayLove.content}\n`
   }
 
   // 添加一句一言
-  if (oneWord) {
-    text += `
-『一言』${oneWord.hitokoto}\n`
-  }
+//   if (oneWord) {
+//     text += `
+// 『一言』${oneWord.hitokoto}\n`
+//   }
 
   // 每日英语
-  if (dayEnglish) {
-    text += `
-『每日英语（${dayjs(dayEnglish.date).format('ll')}』${dayEnglish.content}`
-  }
+//   if (dayEnglish) {
+//     text += `
+// 『每日英语（${dayjs(dayEnglish.date).format('ll')}』${dayEnglish.content}`
+//   }
 
   return {
     msgtype: 'text',

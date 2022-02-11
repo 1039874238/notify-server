@@ -49,7 +49,7 @@ const goodWord = async() => {
 
 // 天气信息
 const weatherInfo = async() => {
-  const nowTime = dayjs().format('YYYY-MM-DD')
+  const nowTime = dayjs().add(8,'houer').format('YYYY-MM-DD')
   if (nowTime) {
     const lunarInfo = await API.getLunarDate(nowTime)
     const oneWord = await API.getOneWord()
